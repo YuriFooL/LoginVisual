@@ -1,0 +1,120 @@
+body{
+    background-image:linear-gradient(45deg, purple, violet);
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    
+}
+
+.box{
+
+    width: 200px;
+    height: 200px;
+    padding: 100px;
+    border: 2px solid black;
+    background-color: rgba(0,0,0, 0.8);
+    border-radius: 20%;
+    color: aliceblue;
+    text-align: center;
+    
+}
+
+.txt-animado{
+    font-size: 30px;
+    font-weight: 300;
+
+}
+
+  
+.txt-animado span{
+    position: relative;
+}
+ 
+ .txt-animado span::before{
+    content: "";
+    color: white;
+    animation: LOGIN 30s infinite;
+
+}
+
+.txt-animado span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid white;
+    right: -10px;
+    animation: cursor .9s infinite, digitar 20s steps(15) infinite;
+    width: calc(100% + 10px);
+    background-color: rgb(39,16,39);
+}
+
+@keyframes digitar{
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 10px);
+    }
+
+}
+
+@keyframes cursor{
+    0%{
+        border-left: 2px solid rgb(39,16,39);
+    }
+}
+
+
+@keyframes LOGIN {
+    0%,20%{
+        content: "Login...";
+    }
+    21%,40%{
+        content: "Login...";
+    }
+    41%,60%{
+        content: "Login...";
+    }
+    61%,80%{
+        content: "Login...";
+    }
+    81%,100%{
+        content: "Login...";
+    } 
+}
+
+
+input{
+    padding: 12px;
+    border: 2px solid black;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-bottom: 2px solid violet;
+    
+}
+
+
+button{
+    cursor: pointer;
+    border: 2px solid black;
+    width: 150px;
+    height: 40px;
+    align-items: center;
+    border-radius: 15px;
+    background-color: violet;
+    font-size: 16px;
+
+}
+
+button:hover{
+    background-color: purple;
+    border-color: rgba(0,0,0, 0.8);
+
+}
+
